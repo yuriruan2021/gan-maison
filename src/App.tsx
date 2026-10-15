@@ -106,9 +106,17 @@ export default function App() {
           <div className="stage__content" ref={contentRef}>
             <div className="stage__flower">
               <SecretOlive open={opened} compact={revealed} onOpen={bloom} />
-              <p className={`hint ${phase === 'garden' ? 'is-visible' : ''}`} aria-hidden>
+              {/* o texto também abre o segredo (o nome acessível fica na oliveira, por isso aria-hidden e fora do Tab) */}
+              <button
+                type="button"
+                className={`hint ${phase === 'garden' ? 'is-visible' : ''}`}
+                onClick={bloom}
+                disabled={phase !== 'garden'}
+                tabIndex={-1}
+                aria-hidden
+              >
                 Toque para descobrir o segredo
-              </p>
+              </button>
             </div>
             <GiftCard visible={revealed} />
           </div>
