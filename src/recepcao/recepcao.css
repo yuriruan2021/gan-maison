@@ -1,0 +1,349 @@
+/* Área da recepção: mesmos tokens da página (styles.css), mas com rolagem e foco em leitura rápida no balcão. */
+
+html.is-recepcao,
+html.is-recepcao body {
+  overflow: auto;
+  overscroll-behavior: auto;
+  background: var(--cream);
+}
+
+.rc {
+  min-height: 100svh;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom));
+}
+
+.rc--login {
+  display: grid;
+  place-items: center;
+}
+
+.rc-card {
+  border-radius: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px -40px rgba(34, 54, 42, 0.45);
+}
+
+/* ───────── Login ───────── */
+.rc-login {
+  width: 100%;
+  max-width: 380px;
+  padding: 32px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: center;
+}
+
+.rc-login__logo {
+  align-self: center;
+  font-size: 44px;
+}
+
+.rc-eyebrow {
+  margin: -6px 0 0;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--moss-ink);
+}
+
+.rc-title {
+  margin: 0 0 6px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  color: var(--green-900);
+}
+
+.rc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--green-700);
+}
+
+.rc-field input,
+.rc-search {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--green-900);
+  font: 400 16px var(--sans);
+}
+
+.rc-field input:focus,
+.rc-search:focus {
+  outline: none;
+  border-color: var(--olive);
+  box-shadow: 0 0 0 3px rgba(139, 154, 70, 0.2);
+}
+
+.rc-error {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #f6e6df;
+  color: #8f4630;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* ───────── Botões ───────── */
+.rc-btn {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--green-800);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--green-800);
+  font: 500 14px var(--sans);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s var(--ease-out),
+    color 0.2s var(--ease-out),
+    transform 0.15s var(--ease-out);
+}
+
+.rc-btn:active {
+  transform: scale(0.97);
+}
+
+.rc-btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.rc-btn--primary {
+  background: var(--green-800);
+  color: var(--paper);
+}
+
+.rc-btn--ghost {
+  border-color: var(--line);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rc-btn:hover:not(:disabled) {
+    background: var(--green-900);
+    border-color: var(--green-900);
+    color: var(--paper);
+  }
+}
+
+/* ───────── Topo ───────── */
+.rc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 4px 18px;
+}
+
+.rc-top__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.rc-top__label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--moss-ink);
+}
+
+.rc-top__actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ───────── Números ───────── */
+.rc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.rc-stat {
+  padding: 14px 12px;
+  border-radius: 18px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+}
+
+.rc-stat strong {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.05;
+  color: var(--green-900);
+}
+
+.rc-stat small {
+  font-size: 0.5em;
+  color: var(--moss-ink);
+}
+
+.rc-stat span {
+  font-size: 12px;
+  color: var(--green-700);
+}
+
+/* ───────── Lista ───────── */
+.rc-list {
+  padding: 14px;
+}
+
+.rc-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.rc-search {
+  flex: 1 1 260px;
+}
+
+.rc-filter {
+  display: flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+}
+
+.rc-filter button {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--green-700);
+  font: 500 14px var(--sans);
+  cursor: pointer;
+}
+
+.rc-filter button.is-on {
+  background: var(--green-800);
+  color: var(--paper);
+}
+
+.rc-empty {
+  margin: 0;
+  padding: 32px 0;
+  text-align: center;
+  color: var(--green-700);
+}
+
+.rc-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rc-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'code action'
+    'who who'
+    'dates dates';
+  align-items: center;
+  gap: 6px 12px;
+  padding: 14px 4px;
+  border-top: 1px solid var(--line);
+}
+
+.rc-row:first-child {
+  border-top: 0;
+}
+
+.rc-row__code {
+  grid-area: code;
+  font: 600 18px var(--sans);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: var(--green-900);
+}
+
+.rc-row__who {
+  grid-area: who;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 15px;
+}
+
+.rc-row__who strong {
+  font-weight: 500;
+  color: var(--green-900);
+}
+
+.rc-row__who a {
+  color: var(--green-700);
+}
+
+.rc-row__dates {
+  grid-area: dates;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  font-size: 12px;
+  color: var(--moss-ink);
+}
+
+.rc-row__used {
+  font-weight: 600;
+}
+
+.rc-row .rc-btn {
+  grid-area: action;
+}
+
+.rc-row.is-used .rc-row__code {
+  color: var(--moss-ink);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+@media (min-width: 760px) {
+  .rc {
+    padding-top: 28px;
+  }
+  .rc-list {
+    padding: 18px 22px;
+  }
+  .rc-row {
+    grid-template-columns: 150px 1fr 220px auto;
+    grid-template-areas: 'code who dates action';
+  }
+  .rc-row__who,
+  .rc-row__dates {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .rc-stat strong {
+    font-size: 26px;
+  }
+  .rc-top .rc-btn {
+    padding: 0 14px;
+  }
+}

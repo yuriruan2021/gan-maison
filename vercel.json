@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [{ "source": "/recepcao", "destination": "/index.html" }],
+  "headers": [
+    {
+      "source": "/recepcao",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ],
+  "crons": [{ "path": "/api/keepalive", "schedule": "0 12 * * *" }]
+}

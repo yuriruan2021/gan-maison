@@ -1146,6 +1146,166 @@ a {
   color: var(--moss-ink);
 }
 
+.gift__body em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.08em;
+  color: var(--green-900);
+}
+
+.gift__coupon span {
+  font-size: 21px;
+}
+
+/* passo seguinte (formulário → código) entra suave, sem o card piscar */
+.gift__step.is-swap {
+  animation: step-in 0.8s var(--ease-out) both;
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+}
+
+/* ───────── Formulário do presente ───────── */
+.gift__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* cupom "trancado": mostra que há um código esperando para ser liberado */
+.gift__locked {
+  position: relative;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  overflow: hidden;
+  border: 1px dashed var(--olive);
+  border-radius: 14px;
+  background: rgba(207, 214, 187, 0.25);
+  color: var(--moss-ink);
+}
+
+.gift__locked span {
+  font: 600 18px var(--sans);
+  letter-spacing: 0.18em;
+  color: var(--green-800);
+  filter: blur(2.4px);
+  user-select: none;
+}
+
+/* brilho que atravessa o cupom de tempos em tempos */
+.gift__locked::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.85) 50%, transparent 70%);
+  transform: translateX(-120%);
+}
+
+.gift.is-visible .gift__locked::after {
+  animation: locked-shine 3.6s var(--ease-out) 1.8s infinite;
+}
+
+@keyframes locked-shine {
+  0% {
+    transform: translateX(-120%);
+  }
+  45%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.gift__prompt {
+  margin: 4px 0 2px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.2;
+  color: var(--green-900);
+  text-wrap: balance;
+}
+
+.gift__field {
+  position: relative;
+  display: block;
+}
+
+.gift__field-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  translate: 0 -50%;
+  display: inline-flex;
+  color: var(--moss);
+  pointer-events: none;
+}
+
+.gift__input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px 0 46px;
+  border: 1.5px solid rgba(139, 154, 70, 0.45);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 16px -12px rgba(34, 54, 42, 0.35);
+  color: var(--green-900);
+  font: 400 16px/1.2 var(--sans); /* 16px: o iPhone não dá zoom ao focar */
+  transition:
+    border-color 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out),
+    background 0.25s var(--ease-out);
+}
+
+.gift__input::placeholder {
+  color: var(--green-700);
+  opacity: 0.75;
+}
+
+.gift__input:focus {
+  outline: none;
+  border-color: var(--olive);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(139, 154, 70, 0.2);
+}
+
+.gift__input[aria-invalid='true'] {
+  border-color: #b06a4f;
+}
+
+.gift__error {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #8f4630;
+  text-wrap: pretty;
+}
+
+button.gift__cta {
+  width: 100%;
+  margin-top: 4px;
+  border: 0;
+  font-family: var(--sans);
+  cursor: pointer;
+}
+
+button.gift__cta:disabled {
+  cursor: progress;
+  opacity: 0.75;
+}
+
+.gift__form .gift__footnote {
+  margin-top: 2px;
+}
+
 /* ───────── Jardim ───────── */
 .garden {
   position: absolute;
@@ -1440,6 +1600,21 @@ a {
   }
   .gift__footnote {
     margin-top: 8px;
+  }
+  .gift__form {
+    gap: 8px;
+  }
+  .gift__prompt {
+    font-size: 18px;
+  }
+  .gift__input {
+    min-height: 46px;
+  }
+  .gift__locked {
+    padding: 6px 16px;
+  }
+  .gift__locked span {
+    font-size: 16px;
   }
 }
 
