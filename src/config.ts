@@ -3,7 +3,7 @@
 const WHATSAPP_NUMBER = '5561999791090'
 
 const WHATSAPP_MESSAGE =
-  'Olá! Encontrei o segredo do jardim da Gan Maison 🌿 Quero usar meu presente de boas-vindas de 15% OFF.'
+  'Olá! Encontrei o segredo do jardim da Gan Maison 🌿 Quero usar meu presente de boas-vindas de 10% OFF.'
 
 export const config = {
   brand: 'Gan Maison',
@@ -19,7 +19,7 @@ export const config = {
     // O trecho entre {chaves} vira a "segunda voz" (serifa itálica).
     title: 'Você encontrou o {segredo} do nosso jardim.',
     subtitle: 'E todo jardim tem algo especial reservado para quem chega.',
-    discount: '15%',
+    discount: '10%',
     discountLabel: 'OFF',
     discountCaption: 'presente de boas-vindas',
     body: 'Para você viver sua primeira experiência na nossa nova casa.',

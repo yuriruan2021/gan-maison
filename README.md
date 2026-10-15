@@ -2,7 +2,7 @@
 
 Página que abre ao escanear o QR Code na nova casa da Gan Maison.
 
-**Fluxo:** loading (broto nasce + logo "gan", só na 1ª visita da sessão) → folhas de oliveira surgem espalhadas pela tela; a folha do centro vira uma janela que dá zoom até revelar o site, enquanto as outras voam para fora → fundo em gradiente da marca, com o prado de flores e samambaias crescendo → a oliveira pulsa ("Toque na oliveira…") → a copa se enche de folhas prateadas, flores e azeitonas, com pólen e um clarão de luz, pétalas caem → aparece o presente de 15% OFF com botão para o WhatsApp.
+**Fluxo:** loading (broto nasce + logo "gan", só na 1ª visita da sessão) → folhas de oliveira surgem espalhadas pela tela; a folha do centro vira uma janela que dá zoom até revelar o site, enquanto as outras voam para fora → fundo em gradiente da marca, com o prado de flores e samambaias crescendo → a oliveira pulsa ("Toque na oliveira…") → a copa se enche de folhas prateadas, flores e azeitonas, com pólen e um clarão de luz, pétalas caem → aparece o presente de 10% OFF com botão para o WhatsApp.
 
 Direção e checagens seguem o pack `premium-web-design` do Brainforge (nível **Premium**): moldura com borda de luz e grão, tipografia editorial com segunda voz em itálico, um momento-assinatura (a oliveira, como a da recepção), CTA com letter roll, preloader com failsafe, movimento reduzido ao vivo e fallback sem JavaScript.
 
