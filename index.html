@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#E8E6DA" />
+    <title>Gan Maison · O segredo do jardim</title>
+    <meta name="description" content="Você encontrou o segredo do nosso jardim. Um presente de boas-vindas na nova casa da Gan Maison." />
+
+    <!-- Prévia ao compartilhar o link (WhatsApp, Instagram). Troque og:image por uma arte 1200x630 (PNG/JPG) quando tiver. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Gan Maison" />
+    <meta property="og:title" content="Gan Maison · O segredo do jardim" />
+    <meta property="og:description" content="Todo jardim tem algo especial reservado para quem chega." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
+
+    <!-- Preloader: só na primeira visita da sessão e nunca com movimento reduzido ou sem JS -->
+    <script>
+      try {
+        if (!sessionStorage.getItem('gan-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('has-intro')
+          sessionStorage.setItem('gan-intro', '1')
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <noscript>
+        <main style="max-width:420px;margin:15vh auto;padding:0 20px;text-align:center;font-family:Georgia,serif;color:#2f4a36">
+          <p style="letter-spacing:.3em;font:500 12px system-ui;color:#5d6b30">GAN MAISON</p>
+          <h1 style="font-weight:400">Você encontrou o segredo do nosso jardim.</h1>
+          <p>Um presente de boas-vindas: <strong>15% OFF</strong> na sua primeira experiência na nossa nova casa.</p>
+          <p><a href="https://api.whatsapp.com/send?phone=5561999791090" style="color:#2f4a36">Resgatar no WhatsApp</a></p>
+        </main>
+      </noscript>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
